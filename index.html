@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O.O&G (Oman Oil & Gas)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+      color: #212529;
+    }
+    header {
+      background: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #003366;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .hidden {
+      display: none;
+    }
+    .wallet {
+      background: #e9f7ef;
+      padding: 20px;
+      margin-top: 20px;
+      border-left: 4px solid #28a745;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>O.O&amp;G (Oman Oil &amp; Gas)</h1>
+  </header>
+
+  <div class="container">
+    <h2>Create an Account & Choose Your Plan</h2>
+    <form id="registrationForm">
+      <label>Full Name:</label>
+      <input type="text" required />
+
+      <label>Email:</label>
+      <input type="email" required />
+
+      <label>Country:</label>
+      <input type="text" required />
+
+      <label>Username:</label>
+      <input type="text" required />
+
+      <label>Password:</label>
+      <input type="password" required />
+
+      <label>Select Plan:</label>
+      <select id="plan">
+        <option value="Basic">Basic – $99</option>
+        <option value="VIP">VIP – $100,000</option>
+      </select>
+
+      <button type="submit">Proceed to Payment</button>
+    </form>
+
+    <div id="paymentInfo" class="hidden">
+      <h2>Payment Instructions</h2>
+      <p>Thank you for registering. Please send the corresponding amount in <strong>USDT</strong> to the wallet below:</p>
+      <div class="wallet">
+        USDT Wallet: <strong>TSLy3M73fNvSs7kv9yiBECvEyr3oSCqn7u</strong>
+      </div>
+      <p>Once payment is made, contact us with your transaction ID.</p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const paymentInfo = document.getElementById('paymentInfo');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.classList.add('hidden');
+      paymentInfo.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
