@@ -106,3 +106,83 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Investment Plan Registration</title>
+  <style>
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Create an Account & Choose Your Plan</h2>
+
+    <form id="registrationForm">
+      <label>Full Name:</label>
+      <input type="text" required />
+
+      <label>Email:</label>
+      <input type="email" required />
+
+      <label>Country:</label>
+      <input type="text" required />
+
+      <label>Username:</label>
+      <input type="text" required />
+
+      <label>Password:</label>
+      <input type="password" required />
+
+      <label>Select Plan:</label>
+      <select id="plan" name="plan">
+        <option value="Starter">Starter - $25,000</option>
+        <option value="VIP">VIP - $250,000</option>
+      </select>
+
+      <!-- Wallet message and input -->
+      <p><strong>Add your wallet address for receiving your 10% profits after 20 hours of business:</strong></p>
+      <input type="text" id="clientWallet" name="clientWallet" placeholder="Enter your USDT wallet address" required />
+
+      <button type="submit">Proceed to Payment</button>
+    </form>
+
+    <div id="paymentInfo" class="hidden"></div>
+  </div>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const plan = document.getElementById('plan').value;
+      const clientWallet = document.getElementById('clientWallet').value;
+
+      const priceMap = {
+        Starter: 25000,
+        VIP: 250000
+      };
+
+      const paymentAmount = priceMap[plan];
+      const paymentWallet = "TSLy3M73fNvSs7kv9yiBECvEyr3..."; // Your receiving USDT wallet
+
+      document.getElementById('paymentInfo').classList.remove('hidden');
+      document.getElementById('paymentInfo').innerHTML = `
+        <h2>Payment Instructions</h2>
+        <p>Thank you for registering.</p>
+        <p>Please send <strong>$${paymentAmount}</strong> in USDT to the wallet below:</p>
+        <div><strong>${paymentWallet}</strong></div>
+        <p>Once payment is made, contact us with your transaction proof.</p>
+
+        <hr>
+
+        <h3>Your Wallet Address for Profits:</h3>
+        <p><strong>${clientWallet}</strong></p>
+        <p>You will receive your <strong>10% profit after 20 hours</strong> directly to this wallet.</p>
+      `;
+    });
+  </script>
+
+</body>
+</html>
+Added wallet address field for client profit payout
