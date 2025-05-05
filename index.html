@@ -186,3 +186,31 @@
 </body>
 </html>
 Added wallet address field for client profit payout
+<form id="registrationForm">
+  <label>Full Name:</label>
+  <input type="text" required />
+
+  <label>Email:</label>
+  <input type="email" required />
+
+  <label>Country:</label>
+  <input type="text" required />
+
+  <label>Username:</label>
+  <input type="text" required />
+
+  <label>Password:</label>
+  <input type="password" required />
+
+  <label>Select Plan:</label>
+  <select id="plan" name="plan">
+    <option value="Starter">Starter - $25,000</option>
+    <option value="VIP">VIP - $250,000</option>
+  </select>
+
+  <!-- New Instruction and Wallet Address Input -->
+  <p><strong>Add your wallet address for receiving your 10% profits after 20 hours of business:</strong></p>
+  <input type="text" id="clientWallet" name="clientWallet" placeholder="Enter your USDT wallet address" required />
+
+  <button type="submit">Proceed to Payment</button>
+</form>
