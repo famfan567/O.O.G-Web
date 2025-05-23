@@ -2,54 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Payment Instructions - O.O&G</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confirm Your Deposit</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 40px;
+      background: #f8f9fa;
+      padding: 20px;
     }
-    .box {
+    .container {
       max-width: 600px;
-      background: #fff;
       margin: auto;
+      background: white;
       padding: 30px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     h2 {
       color: #003366;
-      margin-top: 0;
     }
-    .wallet {
-      background: #e0ffe0;
-      padding: 20px;
-      border-left: 5px solid #28a745;
-      font-family: monospace;
+    .wallet-address {
+      background: #e9f7ef;
+      padding: 15px;
+      border-left: 4px solid #28a745;
       word-break: break-word;
       margin-bottom: 20px;
-      font-size: 18px;
     }
-    .summary {
-      margin-bottom: 30px;
-    }
-    .summary p {
-      margin: 5px 0;
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
     button {
-      background: #28a745;
+      background: #003366;
       color: white;
       border: none;
-      padding: 12px 20px;
-      font-size: 16px;
-      border-radius: 5px;
       cursor: pointer;
-      margin-top: 10px;
-      transition: background-color 0.3s ease;
     }
     button:hover {
-      background: #218838;
+      background: #002244;
     }
-    .confirmation
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Make Your Payment</h2>
+    <p>Please send your USDT (TRC20) payment to the address below:</p>
+    <div class="wallet-address">
+      TKsXVhhoY18RJeVzwmH5qs3XKg4izqX7zd
+    </div>
+
+    <label for="txid">Enter Your Transaction ID:</label>
+    <input type="text" id="txid" placeholder="Paste your TXID here" required />
+
+    <button onclick="confirmDeposit()">Confirm Deposit</button>
+  </div>
+
+  <script>
+    function confirmDeposit() {
+      const txid = document.getElementById('txid').value.trim();
+      if (!txid) {
+        alert("Please enter your transaction ID.");
+        return;
+      }
+
+      alert("Deposit confirmed with TXID: " + txid);
+    }
+  </script>
+</body>
+</html>
