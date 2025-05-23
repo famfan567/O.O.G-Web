@@ -59,7 +59,8 @@
 
   <div class="container">
     <h2>Create an Account & Choose Your Plan</h2>
-    <form id="registrationForm">
+    <form id="registrationForm" onsubmit="event.preventDefault(); window.location.href='payment.html';">
+
   <label>Full Name:</label>
   <input type="text" required />
 
